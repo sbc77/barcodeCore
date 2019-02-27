@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <PackageVersion>1.0.0</PackageVersion>
+        <Authors>Sebastian Bucko</Authors>
+        <Owners>Sebastian Bucko</Owners>
+        <PackageProjectUrl>https://github.com/sbc77/barcodeCore</PackageProjectUrl>
+        <Title>BarcodeCore</Title>
+        <PackageId>BarcodeCore</PackageId>
+        <Description>Barcode engine, parsing and drawing.</Description>
+        <PackageLicenseUrl>https://raw.githubusercontent.com/sbc77/barcodeCore/master/LICENSE</PackageLicenseUrl>
+        <PackOnBuild>true</PackOnBuild>
+    </PropertyGroup>
+    <ItemGroup>
+        <Folder Include="Barcodes\" />
+        <Folder Include="Barcodes\GS1\" />
+    </ItemGroup>
+</Project>
