@@ -11,7 +11,7 @@ var barcode = BarcodeFactory.Create(BarcodeTypes.Ean_128);
 
 barcode.OnRenderBar = (bar) =>
 {
-    //  ** draw barcode element using bar object: **
+    //  ** draw barcode element (black rectangle) using bar object: **
     //  bar.X 
     //  bar.Width 
 };
