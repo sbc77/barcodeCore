@@ -31,20 +31,17 @@ namespace BarcodeCore.Test
         [Fact]
         public void CreateSvgBarcodeTest()
         {
-            var b = BarcodeFactory.Create(BarcodeTypes.Gs1_128);
-
+            var barcode = BarcodeFactory.Create(BarcodeTypes.Gs1_128);
+            var barcodeTxt = "(02)07611365331178(37)112(400)20216916";
+            var scale = 1.3;
             var svg = string.Empty;
 
-            var scale = 1.3;
-
-            b.OnRenderBar = (bar) =>
+            barcode.OnRenderBar = (bar) =>
             {
                 svg += $"<rect x='{bar.X * scale + 20}' y='20' height='110' width='{bar.Width * scale}' />{Environment.NewLine}";
             };
 
-            var barcodeTxt = "(02)07611365331178(37)112(400)20216916";
-
-            b.Render(barcodeTxt);
+            barcode.Render(barcodeTxt);
 
             svg = $@"<?xml version='1.0' ?>
                      <svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink= 'http://www.w3.org/1999/xlink' width='600' height='170'>
