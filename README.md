@@ -1,6 +1,9 @@
 # barcodeCore
 Barcode - parsing and drawing.
 
+.NETStandard 2.0  
+No external dependencies.
+
 ## Usage
 ``` C#
 // get instance of specific barcode implementation 
