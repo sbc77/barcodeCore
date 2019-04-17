@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
@@ -11,6 +11,7 @@
         <Description>Barcode engine, parsing and drawing.</Description>
         <PackageLicenseUrl>https://raw.githubusercontent.com/sbc77/barcodeCore/master/LICENSE</PackageLicenseUrl>
         <PackOnBuild>true</PackOnBuild>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
     <ItemGroup>
         <Folder Include="Barcodes\" />
