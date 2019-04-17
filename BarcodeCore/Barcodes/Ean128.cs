@@ -128,26 +128,27 @@ namespace BarcodeCore.Barcodes
         {
             var codes = this.GetCodes(barcode);
 
-            const int BarWeight = 1;
-            var width = ((codes.Length - 3) * 11 + 35) * BarWeight;
+            const int barWeight = 1;
+            
+            //var width = ((codes.Length - 3) * 11 + 35) * BarWeight;
 
             int cursor = 0;
 
-            for (int codeidx = 0; codeidx < codes.Length; codeidx++)
+            for (int codeIdx = 0;  codeIdx < codes.Length; codeIdx++)
             {
-                int code = codes[codeidx];
+                int code = codes[codeIdx];
 
                 for (int bar = 0; bar < 8; bar += 2)
                 {
-                    int barwidth = cPatterns[code, bar] * BarWeight;
-                    int spcwidth = cPatterns[code, bar + 1] * BarWeight;
+                    int barWidth = cPatterns[code, bar] * barWeight;
+                    int spcWidth = cPatterns[code, bar + 1] * barWeight;
 
-                    if (barwidth > 0)
+                    if (barWidth > 0)
                     {
-                        this.OnRenderBar(new BarcodeBar { X = cursor, Width = barwidth });
+                        this.OnRenderBar(new BarcodeBar { X = cursor, Width = barWidth });
                     }
 
-                    cursor += (barwidth + spcwidth);
+                    cursor += (barWidth + spcWidth);
                 }
             }
         }
@@ -170,7 +171,8 @@ namespace BarcodeCore.Barcodes
 
         protected static bool IsDigitsOnly(string str)
         {
-            foreach (char c in str)
+            
+            foreach (char c in str.Replace("|",string.Empty))
             {
                 if (c < '0' || c > '9')
                     return false;

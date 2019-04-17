@@ -84,7 +84,7 @@ namespace BarcodeCore.Barcodes.GS1
 
             if (!this.IsFixed)
             {
-                value.Append('|');
+                value+='|';
             }
 
             return value;
@@ -92,7 +92,7 @@ namespace BarcodeCore.Barcodes.GS1
 
         private static bool IsDigitsOnly(string str)
         {
-            foreach (char c in str)
+            foreach (char c in str.Replace("|",string.Empty))
             {
                 if (c < '0' || c > '9')
                     return false;

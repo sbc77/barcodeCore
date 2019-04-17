@@ -201,6 +201,8 @@ namespace BarcodeCore.Barcodes
 
         private static List<int> Compress(string segmentsStr)
         {
+            var lastCodeSet = 'c';
+        
             var result = new List<int>
             {
                 (int)CodeSet.StartCodeC,
@@ -209,9 +211,10 @@ namespace BarcodeCore.Barcodes
 
             foreach (var segment in segmentsStr.Split('|'))
             {
-                if (result.Last() == (int)CodeSetC.CodeB)
+                if (lastCodeSet== 'b') // result.Last() == (int)CodeSetC.CodeB)
                 {
                     result.Add((int)CodeSetB.CodeC);
+                    lastCodeSet = 'c';
                 }
 
                 for (var i = 0; i < segment.Length; i += 2)
@@ -225,6 +228,7 @@ namespace BarcodeCore.Barcodes
                     {
                         result.Add((int)CodeSetC.CodeB);
                         result.Add(segment[i] - 32);
+                        lastCodeSet = 'b';
                     }
                 }
 
