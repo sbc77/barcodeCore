@@ -44,4 +44,4 @@ File.WriteAllText("barcodeTest.svg", svg);
 ![Example barcode](barcode.png "Barcode")
 ## Currently supported barcodes:
 * EAN 128 - CodeSet-B
-* GS1-128 - CodeSet-C
+* GS1-128 - CodeSet-C & CodeSet-B
